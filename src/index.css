@@ -1,0 +1,20 @@
+h1, h2, h3, p {
+  font-family: 'Prata', serif;
+  font-weight: unset;
+}
+
+h1 {
+  color: #229B67;
+}
+
+a:focus {
+  outline: 2px solid #229B67;
+}
+
+button:focus {
+  outline: 2px solid #229B67;
+}
+
+input {
+  outline: 0;
+}
