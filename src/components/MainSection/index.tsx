@@ -2,7 +2,7 @@ import React from "react"
 import Word from "../../Entity/word"
 import WordCard from "../Card"
 
-import { Section } from './styles'
+import { CardsSection } from './styles'
 
 interface MainSectionProps {
     words: Word[]
@@ -12,11 +12,11 @@ export const MainSection = ({
     words,
 }: MainSectionProps) => {
     return (
-        <Section>
+        <CardsSection>
             {
-                words.map(w => <WordCard word={w} />)
+                words.map((w, i) => <WordCard word={w} key={i} />)
             }
-        </Section>
+        </CardsSection>
     )
 }
 

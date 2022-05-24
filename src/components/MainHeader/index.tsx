@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Navbar, Button } from '@blueprintjs/core'
+import { Navbar } from '@blueprintjs/core'
 import { Select } from '@blueprintjs/select'
+import { NavbarGroup } from './styles';
 
 interface MainHeaderProps {
     selectedProject?: string
@@ -16,13 +17,13 @@ function handleProjectChange(item: string, event?: React.SyntheticEvent<HTMLElem
 
 export const MainHeader = ({ projects }: MainHeaderProps) => {
     return (
-        <Navbar>
-            <Navbar.Group align='left'>
-                <Navbar.Heading>
-                    <h1>Word Tracker</h1>
-                </Navbar.Heading>
-                <Navbar.Divider />
-                {projects === undefined || projects.length == 0 ?
+        <Navbar fixedToTop>
+            <NavbarGroup>
+                <h1>Word Tracker</h1>
+            </NavbarGroup>
+
+            {/* Move this to menu */}
+            {/* {projects === undefined || projects.length == 0 ?
                     <Button>
                         Create new project
                     </Button> :
@@ -34,8 +35,7 @@ export const MainHeader = ({ projects }: MainHeaderProps) => {
                         <Button>
                             Select project
                         </Button>
-                    </ProjectSelect>}
-            </Navbar.Group>
+                    </ProjectSelect>} */}
         </Navbar>
     )
 }

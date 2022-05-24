@@ -1,38 +1,45 @@
 import React from 'react';
 import './App.css';
 
-import { AnchorButton, Button, ButtonGroup, Navbar } from "@blueprintjs/core";
-import { Select } from "@blueprintjs/select";
 import MainHeader from './components/MainHeader';
 import MainSection from './components/MainSection';
-import Project from './Entity/project';
-import Repository from './components/Repo';
+import Word from './Entity/word';
+
+let words: Word[] = [
+    {
+        word: "laufen",
+        translations: ["run", "walk", "go"],
+    },
+    {
+        word: "gehen",
+        translations: ["go", "do", "leave"],
+    },
+    {
+        word: "geschwindigkeit",
+        translations: ["velocity"],
+    },
+    {
+        word: "Lebenshaltungskosten",
+        translations: ["cost of living"],
+    },
+]
 
 function App() {
-    const [project, setProject] = React.useState<Project | undefined>(undefined)
-    const [projectName, setProjectName] = React.useState<string>("")
+    // const [project, setProject] = React.useState<Project | undefined>(undefined)
+    // const [projectName, setProjectName] = React.useState<string>("")
 
-    React.useEffect(() => {
-        let p = Repository.loadProject(projectName)
-        setProject(p)
-    }, [projectName])
+    // React.useEffect(() => {
+    //     let p = Repository.loadProject(projectName)
+    //     setProject(p)
+    // }, [projectName])
+
+    for (let i = 0; i < 20; i++)
+        words.push(words[i % words.length])
 
     return (
         <>
             <MainHeader />
-            <div className='centered'>
-                <MainSection />
-                <p>Coming Soon...</p>
-                <ButtonGroup minimal={true}>
-                    <AnchorButton
-                        text="GitHub"
-                        icon="git-repo"
-                        href="https://github.com/LeoVen"
-                        target={"_blank"}
-                        rel="noreferrer"
-                    />
-                </ButtonGroup>
-            </div>
+            <MainSection words={words}/>
         </>
     );
 }

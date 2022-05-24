@@ -1,7 +1,7 @@
 
 const storage = () => window.localStorage["leoven.word-tracker"]
 
-const loadProject = (project: string) => {
+const loadProject = (project: string): any => {
     const st = storage()
 
     if (st !== null || st !== undefined) {

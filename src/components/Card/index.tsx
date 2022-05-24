@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import { Navbar, Button, Card, Elevation } from '@blueprintjs/core'
+import { Elevation } from '@blueprintjs/core'
 import Word from '../../Entity/word';
+import { MainCard } from './styles';
 
 interface WordCardProps {
     word: Word
@@ -11,9 +12,9 @@ export const WordCard = ({
     word,
 }: WordCardProps) => {
     return (
-        <Card elevation={Elevation.FOUR}>
+        <MainCard elevation={Elevation.FOUR}>
             <p>{word.word}</p>
-        </Card>
+        </MainCard>
     )
 }
 
