@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Elevation } from '@blueprintjs/core'
-import Word from '../../Entity/word';
+import { Word } from '../../entity';
 import { MainCard } from './styles';
 
 interface WordCardProps {

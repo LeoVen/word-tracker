@@ -3,7 +3,7 @@ import './App.css';
 
 import MainHeader from './components/MainHeader';
 import MainSection from './components/MainSection';
-import Word from './Entity/word';
+import { Word } from './entity';
 
 let words: Word[] = [
     {

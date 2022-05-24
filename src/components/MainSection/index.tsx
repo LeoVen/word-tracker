@@ -1,5 +1,5 @@
 import React from "react"
-import Word from "../../Entity/word"
+import { Word }from "../../entity"
 import WordCard from "../Card"
 
 import { CardsSection } from './styles'
